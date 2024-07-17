@@ -1,31 +1,48 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
 }
 
-.cards > ul > li {
-  border: 1px solid var(--dark-color);
+.cards .card {
   background-color: var(--background-color);
+  border: 1px solid var(--light-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards .card .card-image {
+  height: 200px;
+  overflow: hidden;
 }
 
-.cards .cards-card-image {
-  line-height: 0;
-}
-
-.cards .cards-card-body > *:first-child {
-  margin-top: 0;
-}
-
-.cards > ul > li img {
+.cards .card .card-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
+}
+
+.cards .card .card-content {
+  padding: 16px;
+}
+
+.cards .card .card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards .card .card-content ul li {
+  margin-bottom: 8px;
+  font-family: var(--body-font-family);
+}
+
+.cards .card .card-content ul li strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
 }
